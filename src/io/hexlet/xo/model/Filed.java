@@ -1,6 +1,9 @@
 package io.hexlet.xo.model;
 
 
+import io.hexlet.xo.model.exception.AlreadyOccupiedException;
+import io.hexlet.xo.model.exception.InvalidePointException;
+
 import java.awt.*;
 
 public class Filed {
@@ -13,11 +16,21 @@ public class Filed {
         return FIELD_SIZE;
     }
 
-    public Figure getFigure(final Point point) {
+    public Figure getFigure(final Point point) throws InvalidePointException {
+        if (!checkPoint(point)) {
+            throw new InvalidePointException();
+        }
         return field[point.x][point.y];
     }
 
-    public void setFigure(final Point point, final Figure figure) {
+    public void setFigure(final Point point, final Figure figure) throws InvalidePointException, AlreadyOccupiedException {
+        if (!checkPoint(point)) {
+            throw new InvalidePointException();
+        }
+        if (field[point.x][point.y] != null) {
+
+            throw new AlreadyOccupiedException();
+        }
         field[point.x][point.y] = figure;
 
     }
