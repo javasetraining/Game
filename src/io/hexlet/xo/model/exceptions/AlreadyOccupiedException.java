@@ -1,4 +1,4 @@
-package io.hexlet.xo.model.exception;
+package io.hexlet.xo.model.exceptions;
 
 /**
  * Created by MaRV on 8/17/2016.
