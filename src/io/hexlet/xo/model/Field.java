@@ -5,6 +5,8 @@ import io.hexlet.xo.model.exceptions.InvalidBoardSizeException;
 import io.hexlet.xo.model.exceptions.InvalidPointException;
 
 
+
+
 public class Field {
 
     private static final int MIN_COORDINATE = 0;

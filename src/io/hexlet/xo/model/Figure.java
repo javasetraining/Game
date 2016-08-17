@@ -1,7 +1,8 @@
 package io.hexlet.xo.model;
 
-public enum Figure {
+import java.awt.*;
+
+public enum Figure{
 
         X, O
-
 }

@@ -8,7 +8,7 @@ import io.hexlet.xo.model.exceptions.InvalidPointException;
 
 public class WinnerController {
 
-    public Figure getWinner(final Field field) {
+    public Figure getWinner(final Figure field) {
         final int fieldSize = field.getSize();
         try {
             for (int i = 0; i < fieldSize; i++)
@@ -31,7 +31,7 @@ public class WinnerController {
         return null;
     }
 
-    private boolean check(final Field field,
+    boolean check(final Field field,
                           final Point currentPoint,
                           final IPointGenerator pointGenerator) {
         final Figure currentFigure;
