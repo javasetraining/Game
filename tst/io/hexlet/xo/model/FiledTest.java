@@ -45,8 +45,39 @@ public class FiledTest {
             fail();
         } catch (final InvalidPointException e) {
         }
+    }
 
+    @Test
+    public void getFigureWhenYIsLessThenZerro() throws Exception {
+        final Filed filed = new Filed();
+        final Point inputPoint = new Point(0, -1);
+        try {
+            filed.getFigure(inputPoint);
+            fail();
+        } catch (final InvalidPointException e) {
+        }
+    }
 
+    @Test
+    public void getFigureWhenXIsMoreThenSize() throws Exception {
+        final Filed filed = new Filed();
+        final Point inputPoint = new Point(filed.getSize() + 1, 0);
+        try {
+            filed.getFigure(inputPoint);
+            fail();
+        } catch (final InvalidPointException e) {
+        }
+    }
+
+    @Test
+    public void getFigureWhenYIsMoreThenSize() throws Exception {
+        final Filed filed = new Filed();
+        final Point inputPoint = new Point(0, filed.getSize() + 1);
+        try {
+            filed.getFigure(inputPoint);
+            fail();
+        } catch (final InvalidPointException e) {
+        }
     }
 
 }
