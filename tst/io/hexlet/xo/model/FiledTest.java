@@ -1,9 +1,9 @@
 package io.hexlet.xo.model;
 
+import io.hexlet.xo.model.exception.InvalidPointException;
 import org.junit.Test;
 
 import java.awt.*;
-import java.lang.reflect.Field;
 
 import static org.junit.Assert.*;
 
@@ -24,6 +24,29 @@ public class FiledTest {
         filed.setFigure(inputPoint, inputFigure);
         final Figure actualFigure = filed.getFigure(inputPoint);
         assertEquals(inputFigure, actualFigure);
+    }
+
+    @Test
+    public void getFigureWhenTheFiguteNotset() throws Exception {
+        final Filed filed = new Filed();
+        final Point inputPoint = new Point(0, 0);
+
+        final Figure actualFigure = filed.getFigure(inputPoint);
+
+        assertNull(actualFigure);
+    }
+
+    @Test
+    public void getFigureWhenXIsLessThenZerro() throws Exception {
+        final Filed filed = new Filed();
+        final Point inputPoint = new Point(-1, 0);
+        try {
+            filed.getFigure(inputPoint);
+            fail();
+        } catch (final InvalidPointException e) {
+        }
+
+
     }
 
 }
