@@ -15,7 +15,7 @@ public class WinnerControllerTest {
     @Test
     public void check() throws Exception {
 
-    }
+
 
     @Test
     public void getWinner() throws Exception {

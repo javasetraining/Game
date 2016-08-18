@@ -18,7 +18,7 @@ public class Game {
         return players;
     }
 
-    public Field getField() {
+    public io.hexlet.xo.model.Field getField() {
         return field;
     }
 
